@@ -40,17 +40,25 @@ int find(const vector<int>& v, int elt, int occ = 1) {
 	}
 
 }
-	
+void remove(vector<int>& v, int elt) {
+	int indice = find(v, elt);
+	for (size_t i = indice; i < v.size() - 1; i++) {
+		v[i] = v[i + 1];
+	}
+	v.pop_back();
+}
 
 int main() {
 	int n;
-	cout << "Saisir le nb d'elements " ;
-	cin >> n;
+	//cout << "Saisir le nb d'elements " ;
+//	cin >> n;
 //	vector<int> v(n);
 //	saisir(v, n);
-	vector<int> v{ 2,5,6,5,10 };
+	vector<int> v{ 2,5,6,5,10 }; 
 	afficher(v);
 	cout << "Derniere occurence de 5 est à l'indice " << find(v, 5, -1) << endl;
-
+	remove(v, 6);
+	cout << "Apres remove" << endl;
+	afficher(v);
 	return 0;
 }
