@@ -1,0 +1,11 @@
+// matricule : 452222
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+	vector<int> v;
+
+}
